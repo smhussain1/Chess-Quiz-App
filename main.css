@@ -12,13 +12,13 @@ html {
     background-repeat: no-repeat;
 } 
 
-.splashpage {
+.mainmessage {
     display: flex;
     align-content: center;
     justify-content: center;
 }
 
-.splashpage header {
+.mainmessage header {
     position:absolute;
     text-align: center;
     margin-top: 100px;
@@ -103,6 +103,35 @@ js-question-header {
     color: aliceblue;
     font-size: 60px;
 }
+
+#js-next-button {
+	margin: 1em auto;
+}
+
+#js-restart-button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 10em;
+}
+
+#js-submit-button {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+}
+
+#question-count, #score-count {
+	display: inline-block;
+	font-size: 1.6em;
+}
+
+#score-count {
+	float: right;
+}
+
 
 @media only screen and (min-width: 360px) {
 
