@@ -34,3 +34,15 @@ let data = [
     answers: ['Mikhail Tal', 'Bobby Fischer', 'Wilhelm Steinitz', 'Mikhail Botvinnik'],
     correctAns: 'Wilhelm Steinitz'}
     ]
+
+
+    function answerCheck(data) {
+        let testanswers = (data[6].answers);
+        for(let i=0; i<testanswers.length; i++) {
+            if (testanswers[i] === data[6].correctAns) {
+                console.log(testanswers[i]);
+            }
+        };
+    };
+
+    answerCheck(data); // this seems to work
