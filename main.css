@@ -125,14 +125,29 @@ js-question-header {
 
 #question-count, #score-count {
 	display: inline-block;
-	font-size: 1.6em;
+    font-size: 1.6em;
+    font: white;
+}
+
+#status-bar {
+    color: white;
 }
 
 #score-count {
-	float: right;
+    float: right;
 }
 
+#finish { 
+    position: relative;
+    margin-top: 400px;
+}
 
+button:hover {
+	background-color: rgb(193, 205, 209);
+	cursor: pointer;
+}
+
+/*
 @media only screen and (min-width: 360px) {
 
 }
@@ -144,3 +159,4 @@ js-question-header {
 @media only screen and (min-width: 900px) {
 
 }
+*/
