@@ -21,8 +21,8 @@ let data = [
 
     {number: 5,
     question: 'Magnus Carlsen was how old when he won the title of Grandmaster?',
-    answers: [12, 13, 15, 19],
-    correctAns: 13},
+    answers: ['Twelve', 'Thirteen', 'Fifteen', 'Ninteen'],
+    correctAns: 'Thirteen'},
 	
     {number: 6,
     question: 'The sequence of moves which plays out as follows:  1.d4 e6 2.e4 d5, is called…..:',
@@ -36,6 +36,8 @@ let data = [
     ]
 
 
+    /*
+    // test function
     function answerCheck(data) {
         let testanswers = (data[6].answers);
         for(let i=0; i<testanswers.length; i++) {
@@ -45,4 +47,4 @@ let data = [
         };
     };
 
-    answerCheck(data); // this seems to work
+    answerCheck(data); // this seems to work  */
