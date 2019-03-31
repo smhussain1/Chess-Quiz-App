@@ -6,7 +6,7 @@ html {
     height: 100%;
 }
 
- body {
+body {
     background-size: cover;
     background-image: url(https://images.unsplash.com/photo-1523875194681-bedd468c58bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80) ;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@ html {
     text-align: center;
     margin-top: 100px;
     color: aliceblue;
-    font-size: 60px;
+    font-size: 50px;
 
 }
 
@@ -44,7 +44,7 @@ fieldset {
 }
 
 .answers {
-    font: white;
+    color: white;
 
 }
 
@@ -123,6 +123,7 @@ js-question-header {
 	margin-bottom: 0;
 }
 
+
 #question-count, #score-count {
 	display: inline-block;
     font-size: 1.6em;
@@ -142,10 +143,23 @@ js-question-header {
     margin-top: 400px;
 }
 
+#finalForm {
+    height: 300px;
+}
+
+/* #replay {
+    position: absolute;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
 button:hover {
-	background-color: rgb(193, 205, 209);
+	background-color: rgb(2, 42, 56);
 	cursor: pointer;
 }
+
+
 
 /*
 @media only screen and (min-width: 360px) {
