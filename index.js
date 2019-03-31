@@ -4,36 +4,31 @@
 
 let score = 0;
 let questionNum = 1;
-let questionsAnswered = 0;
 
 // question and score iterators......:
 
 function iterateQuestion() { //do we need to pass in the variable as an argument?
-    questionNum++;
-  }
-  
+   if (questionNum <= data.length) {
+    questionNum++; 
+  }else{questionNum = questionNum}
+}
+
 function iterateScore() {
     score++;
   }
 
-function iterateQuestionsAnswered() {
-    questionsAnswered++;
-}
-
-
-  //----- user interation function below.....:
-
 function answerCheck(userAnswer, data) {
     let x = (questionNum -1);
-    iterateQuestion();
-    iterateQuestionsAnswered(); 
-     if (userAnswer === data[x].correctAns) {
+    if (userAnswer.text() === data[x].correctAns) {
         iterateScore();    
         return true;
     }else{
         return false;
     };
 }
+
+  //----- user interation function below.....:
+
 
 // alternate code...:
 // return (userAnswer === data[x].correctAns)
@@ -45,10 +40,10 @@ function answerCheck(userAnswer, data) {
    
 //----------------------- form functions below.......:
 
-function questionForm(questionNum, data, score, questionsAnswered) {
+function questionForm(questionNum, data, score) {
         let z=(questionNum-1);
     return `  
-    <main> <!-- semantics role to be added -->
+    <main role='main'> 
         <div class="mainmessage">
             <header>${data[z].question}</header>
         </div>
@@ -56,8 +51,8 @@ function questionForm(questionNum, data, score, questionsAnswered) {
             <form>
             <fieldset>
                     <legend>Select the Right Answer</legend>
-                        <label>
-                        <input type="radio" class="answer1" name="option"></input>
+                        <label> 
+                        <input type="radio" class="answer1" name="option" checked></input>
                         <span class="answers">${data[z].answers[0]}</span>
                         </label> 
                     
@@ -78,87 +73,198 @@ function questionForm(questionNum, data, score, questionsAnswered) {
                 </fieldset>
                 </form>
 
-                <button id="next">Next!</button>
+                <button id="js-submit-button">Submit!</button>
     </main>           
             
            
             <section id="status-bar">
-                <span id="question-count">Question: ${questionNum}/10</span>
-                <span id="score-count">Score: ${score}/${questionsAnswered}</span>
+                <span id="question-count">Question: ${questionNum}/7</span>
+                <span id="score-count">Score: ${score}/${questionNum}</span>
             </section>
    `;
 }
 
 
-  function correctForm(questionNum, data) { // needs to write new HTML and update score and questionNum
-    let z=(questionNum-1) // need to make sure this figure is current when function runs
-   return `
-   <main> 
+function correctForm(questionNum, data) { // needs to write new HTML and update score and questionNum
+    let z=(questionNum-1); // need to make sure this figure is current when function runs
+    iterateQuestion();
+    return `
+   <main role='main'> 
    <div class="mainmessage">
    <header>Great Job - You got it Right!</header>
    </div>
           <!-- semantics role to be added -->
-       <form>
+        <form>
                 <fieldset>
                        <legend>Correct Answer</legend>
                            <label>
-                           <input type="radio" class="answer1" name="option"></input>
+                           <input type="radio" class="answer1" name="option" checked></input>
                            <span class="answers">${data[z].correctAns}</span>
                            </label> 
                        
                 </fieldset>
-               </form>
+        </form>
    
                <button id="next">Next</button>
+
+            <section id="status-bar">
+               <span id="question-count">Question: ${questionNum}/7</span>
+               <span id="score-count">Score: ${score}/${questionNum}</span>
+            </section>
    </main>            
    `;
   }
 
-  function incorrectForm(questionNum, data) { // needs to write new HTML and update score and questionNum
-    let z=(questionNum-1) // need to make sure this figure is current when function runs
-   return `
-   <main> 
+function lastCorrectForm(questionNum, data) { // needs to write new HTML and update score and questionNum
+    let z=(questionNum-1); // need to make sure this figure is current when function runs
+    iterateQuestion();
+    return `
+   <main role='main'> 
    <div class="mainmessage">
-   <header>Sorry....</header>
+   <header>Great Job - You got it Right!</header>
    </div>
           <!-- semantics role to be added -->
-       <form>
+        <form>
                 <fieldset>
                        <legend>Correct Answer</legend>
                            <label>
-                           <input type="radio" class="answer1" name="option"></input>
+                           <input type="radio" class="answer1" name="option" checked></input>
                            <span class="answers">${data[z].correctAns}</span>
                            </label> 
                        
                 </fieldset>
-               </form>
+        </form>
    
-               <button id="js-submit-button">Submit</button>
+               <button id="finish">Finish</button>
+
+            <section id="status-bar">
+               <span id="question-count">Question: ${questionNum}/7</span>
+               <span id="score-count">Score: ${score}/${questionNum}</span>
+            </section>
    </main>            
    `;
   }
+
+
+function incorrectForm(questionNum, data) { // needs to write new HTML and update score and questionNum
+    let z=(questionNum-1); // need to make sure this figure is current when function runs
+    iterateQuestion();
+    return `
+    <main role='main'> 
+    <div class="mainmessage">
+    <header>Sorry, incorrect....</header>
+    </div>
+          <!-- semantics role to be added -->
+        <form>
+                <fieldset>
+                       <legend>Correct Answer is... </legend>
+                           <label>
+                           <input type="radio" class="answer1" name="option" checked></input>
+                           <span class="answers">${data[z].correctAns}</span>
+                           </label> 
+                       
+                </fieldset>
+        </form>
+   
+            <button id="next">Next</button>
+
+            <section id="status-bar">
+               <span id="question-count">Question: ${questionNum}/7</span>
+               <span id="score-count">Score: ${score}/${questionNum}</span>
+            </section>
+    </main>            
+   `;
+  }
   
-function finalScore() {
+  function lastIncorrectForm(questionNum, data) { // needs to write new HTML and update score and questionNum
+    let z=(questionNum-1); // need to make sure this figure is current when function runs
+    iterateQuestion();
+    return `
+    <main role='main'> 
+    <div class="mainmessage">
+    <header>Sorry, incorrect....</header>
+    </div>
+          <!-- semantics role to be added -->
+        <form>
+                <fieldset>
+                       <legend>Correct Answer is...</legend>
+                           <label>
+                           <input type="radio" class="answer1" name="option" checked></input>
+                           <span class="answers">${data[z].correctAns}</span>
+                           </label> 
+                       
+                </fieldset>
+        </form>
+   
+            <button id="finish">Finish</button>
+
+            <section id="status-bar">
+               <span id="question-count">Question: ${questionNum}/7</span>
+               <span id="score-count">Score: ${score}/${questionNum}</span>
+            </section>
+    </main>            
+   `;
+  }
+
+
+function finalScoreForm(questionNum) {
     // will display the final score of the user and thank him/her for playing.  
     // Offer to hit buttons to re-play
     // psuedocode:  ${header}.html("Congratulations your Final Score is ${functionScore})
     // "Please play again or Exit!"
     // Display Play Again button and Exit button
+    let z=(questionNum-1);
+    return `
+    <main role='main'> 
+        <div class="mainmessage">
+        <header>Awesome - Thanks for Playing!</header>
+        </div>
+               <form id="finalForm">
+              
+       </form>    
+                    
+              <button id="replay">Replay!</button>
+                 
+            <section id="status-bar">
+                <span id="question-count">All Done!</span>
+                <span id="score-count">Score: ${score}/${z}</span>
+            </section>
+    </main>
+    `;
+    }
 
+function replayForm() {
+    score = 0;
+    questionNum = 1;
+    return `
+    <main role='main'>
+    <div class="mainmessage">
+    <header>Ready for the Chess Quiz?!</header>
+    </div>
+        
+    <button id="start">Start!</button>
 
-}
-
+    </main>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="storeData.js"></script>
+    `;
+    }
 
   //---------------------------------------- buttons below--------------
-function replayButton() {
-    // will register the replay button hit by user and re-start quiz from beginning.
-}
 
 function startButton() {
     // will register button hit by user and start the application with Question 1.
     // psuedocode:  When user clicks on start, the function questionForm() will be called, taking the User to its screen.
     $('#start').on('click', function() {
-        questionForm(); 
+        $('main').html(questionForm(questionNum, data, score)); 
+    });
+}
+
+function nextButton() {
+    $('main').on('click', '#next', function() {
+        $('main').html(questionForm(questionNum, data, score)); 
     });
 }
 
@@ -171,42 +277,40 @@ function submitButton() {
     // Score function.
     $('main').on('click', '#js-submit-button', function (event) {
         event.preventDefault()
-        const userAnswer = $('input:checked').siblings('span');
+        const userAnswer = $('input:checked').siblings('.answers');
         const userCorrect = answerCheck(userAnswer, data); 
-        if (userCorrect) {
-            correctForm();
+        if (userCorrect==true && questionNum===7) {
+            $('main').html(lastCorrectForm(questionNum, data));
+        }if(userCorrect==false && questionNum===7) {
+            $('main').html(lastIncorrectForm(questionNum, data));
+        }if(userCorrect) {
+            $('main').html(correctForm(questionNum, data));
         }else{
-            incorrectForm();
+            $('main').html(incorrectForm(questionNum, data));
+            
         }
     });
 } 
 
+function finishButton() {
+    $('main').on('click', '#finish', function() {
+        $('main').html(finalScoreForm(questionNum, data, score)); 
+    });
+}
+
+function replayButton() {
+    $('main').on('click', '#replay', function() {
+        $('main').html(replayForm(questionNum, data, score)); // how do you specify default?
+    });
+}
+
 function handleButtons() {
-    StartButton();
-    SubmitButton();
-    //handleNextButton();
-    //handleRestartButton();
+    startButton();
+    submitButton();
+    replayButton();
+    nextButton();
+    finishButton();
   }
   
 handleButtons();
 
-
-//--------------------------------------------buttons above-------------------
-
-
-/* from other project----->
-
-function handleSubmitButton() {
-    $('#container').on('click', '#js-submit-button', function(event) {
-      event.preventDefault()
-  
-      const userAnswer = $('input:checked').siblings('span');
-      
-      const userIsCorrect = checkUserAnswer(answer);
-      if(userIsCorrect) { // this means if userIsCorrect == true?
-        generateCorrectFeedback();
-      } else {
-        generateIncorrectFeedback();
-      }
-    });
-  }  */
