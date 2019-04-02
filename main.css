@@ -3,14 +3,16 @@
 }
 
 html {
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
     background-size: cover;
     background-image: url(https://images.unsplash.com/photo-1523875194681-bedd468c58bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80) ;
     background-repeat: no-repeat;
+    min-height: 80%;
 } 
+
 
 .mainmessage {
     display: flex;
@@ -18,25 +20,28 @@ body {
     justify-content: center;
 }
 
-.mainmessage header {
-    position:absolute;
+.mainmessage header h1 {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 20px;
     color: aliceblue;
     font-size: 50px;
-
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
 }
 
 form {
-    margin-top: 220px; 
-    width: 50%;
+    margin-top: 20px; 
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 
 fieldset {
     height: 400px;
-    padding: 50px;
+    padding: 25px;
     display: flex;
 	flex-direction: column;
     justify-content: space-between;
@@ -45,13 +50,18 @@ fieldset {
 
 .answers {
     color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 
 }
 
 button {
     display: block;
-	min-height: 80px;
-	min-width: 80px;
+	min-height: 65px;
+	min-width: 65px;
 	margin-bottom: 1.5em;
 	font-size: 2em;
 	border: black 2px;;
@@ -60,17 +70,17 @@ button {
 	border-radius: 5px;
 	padding: .5em 1em;
 	width: 60%;
-    max-width: 200px;
+    max-width: 180px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 7px;
+    margin-top: 3px;
 }
  
 #start {
     display: block;
-	min-height: 80px;
-	min-width: 80px;
-	margin-bottom: 1.5em;
+	min-height: 65px;
+	min-width: 65px;
+	margin-bottom: 80px;
 	font-size: 2em;
 	border: black 2px;;
 	background-color:navy;
@@ -78,15 +88,20 @@ button {
 	border-radius: 5px;
 	padding: .5em 1em;
 	width: 60%;
-    max-width: 200px;
+    max-width: 180px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 600px;
+    margin-top: 400px;
 }
 
 legend {
     color: white;
     font-size: 30px;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 
@@ -94,33 +109,19 @@ label {
     font: white;
     margin-bottom: 50px;
     font-size: 25px;
-}
-
-js-question-header {
-    position:absolute;
-    text-align: center;
-    margin-top: 100px;
-    color: aliceblue;
-    font-size: 60px;
-}
-
-#js-next-button {
-	margin: 1em auto;
-}
-
-#js-restart-button {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-	top: 10em;
+    margin-top:0px;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 #js-submit-button {
 	width: 60%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 0;
+	margin-bottom: 0px;
 }
 
 
@@ -128,6 +129,11 @@ js-question-header {
 	display: inline-block;
     font-size: 1.6em;
     font: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 #status-bar {
@@ -140,19 +146,23 @@ js-question-header {
 
 #finish { 
     position: relative;
-    margin-top: 400px;
+    margin-bottom: 0px;
+}
+
+#next {
+    margin-bottom: 0px;
+    margin-top: 3px;
+}
+
+#replay {
+    margin-top: 80px;
+
 }
 
 #finalForm {
     height: 300px;
 }
 
-/* #replay {
-    position: absolute;
-    margin-top: 200px;
-    margin-left: auto;
-    margin-right: auto;
-} */
 
 button:hover {
 	background-color: rgb(2, 42, 56);
@@ -161,16 +171,92 @@ button:hover {
 
 
 
-/*
-@media only screen and (min-width: 360px) {
 
+@media only screen and (max-width: 450px) {
+    .mainmessage header h1 {
+        font-size: 25px;
+    }
+    fieldset    {
+        height: 300px;
+        
+    }
+
+    legend  {
+        font-size: 18px;
+    }
+
+    button  {
+            display: block;
+            min-height: 25px;
+            min-width: 25px;
+            margin-bottom: 1.5em;
+            font-size: 1.5em;
+            border: black 2px;
+            background-color:navy;
+            color: #ffedfc;
+            border-radius: 5px;
+            padding: .5em 1em;
+            width: 40%;
+            max-width: 140px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 3px;
+    }
+
+    label   {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+    #question-count, #score-count {
+        font-size: 1.2em;
+    }
+    form {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
+@media only screen and (min-width: 451px) and (max-width: 1250px) {
+    .mainmessage header h1 {
+        font-size: 32px;
+    }
+    fieldset    {
+        height: 400px;
+    }
+    legend  {
+        font-size: 27px;
+    }
 
-@media only screen and (min-width: 600px) {
+    button  {
+            display: block;
+            min-height: 35px;
+            min-width: 35px;
+            margin-bottom: 1.5em;
+            font-size: 1.5em;
+            border: black 2px;
+            background-color:navy;
+            color: #ffedfc;
+            border-radius: 5px;
+            padding: .5em 1em;
+            width: 40%;
+            max-width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 3px;
+    }
 
+    label   {
+        font-size: 20px;
+        margin-bottom: 35px;
+    }
+    #question-count, #score-count {
+        font-size: 1.4em;
+    }
+    form {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px; 
+
+    }
 }
-
-@media only screen and (min-width: 900px) {
-
-}
-*/
