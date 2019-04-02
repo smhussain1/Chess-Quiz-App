@@ -16,7 +16,7 @@ let data = [
 
     {number: 4,
     question: 'José Raúl Capablanca is best known for what style of chess, in which he has been described as the ‘absolute master’ of?',
-    answers: ['The Orangutang Opening', 'Blanche (always winning when playing white, which enjoys the first move advantage)', 'Blitz chess (games of 5 minutes or less)', 'Blind chess (where players are blindfolded, keeping the game in their minds and calling out moves.'],
+    answers: ['The Orangutang Opening', 'Blanche (always winning when playing white, which enjoys the first move advantage)', 'Blitz chess (games of 5 minutes or less)', 'Blind chess (where players are blindfolded, keeping the game in their minds and calling out moves.)'],
     correctAns: 'Blitz chess (games of 5 minutes or less)'},
 
     {number: 5,
@@ -33,18 +33,20 @@ let data = [
     question: 'Who is considered to be “the Father of Chess”?',
     answers: ['Mikhail Tal', 'Bobby Fischer', 'Wilhelm Steinitz', 'Mikhail Botvinnik'],
     correctAns: 'Wilhelm Steinitz'}
-    ]
+    ];
 
-
-    /*
+/*
+    
     // test function
+    let z = 6;
     function answerCheck(data) {
         let testanswers = (data[6].answers);
         for(let i=0; i<testanswers.length; i++) {
             if (testanswers[i] === data[6].correctAns) {
                 console.log(testanswers[i]);
             }
-        };
+        }; console.log(data[z].correctAns);
     };
 
-    answerCheck(data); // this seems to work  */
+    answerCheck(data); // this seems to work  
+*/
