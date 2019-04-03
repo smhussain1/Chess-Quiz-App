@@ -72,7 +72,7 @@ function questionForm(questionNum, data, score) {
             
            
     <section id="status-bar">
-        <span id="question-count">Question: ${questionNum}/7</span>
+        <span id="question-count">Question: ${questionNum}/${data.length}</span>
         <span id="score-count">Score: ${score}/${questionNum}</span>
     </section>
    `;
@@ -102,7 +102,7 @@ function correctForm(questionNum, data) { // needs to write new HTML and update 
         <button id="next">Next</button>
 
         <section id="status-bar">
-            <span id="question-count">Question: ${questionNum}/7</span>
+            <span id="question-count">Question: ${questionNum}/${data.length}</span>
             <span id="score-count">Score: ${score}/${questionNum}</span>
         </section>
     </main>            
@@ -132,7 +132,7 @@ function lastCorrectForm(questionNum, data) { // needs to write new HTML and upd
         <button id="finish">Finish</button>
 
         <section id="status-bar">
-            <span id="question-count">Question: ${questionNum}/7</span>
+            <span id="question-count">Question: ${questionNum}/${data.length}</span>
             <span id="score-count">Score: ${score}/${questionNum}</span>
         </section>
    </main>            
@@ -163,7 +163,7 @@ function incorrectForm(questionNum, data) { // needs to write new HTML and updat
         <button id="next">Next</button>
 
         <section id="status-bar">
-            <span id="question-count">Question: ${questionNum}/7</span>
+            <span id="question-count">Question: ${questionNum}/${data.length}</span>
             <span id="score-count">Score: ${score}/${questionNum}</span>
         </section>
     </main>            
@@ -193,7 +193,7 @@ function lastIncorrectForm(questionNum, data) { // needs to write new HTML and u
         <button id="finish">Finish</button>
 
         <section id="status-bar">
-            <span id="question-count">Question: ${questionNum}/7</span>
+            <span id="question-count">Question: ${questionNum}/${data.length}</span>
             <span id="score-count">Score: ${score}/${questionNum}</span>
         </section>
     </main>            
@@ -273,7 +273,7 @@ function submitButton() {
         const userAnswer = $('input:checked').siblings('.answers');
         const userCorrect = answerCheck(userAnswer, data);
 
-        if (questionNum === 7) {
+        if (questionNum === data.length) {
             if (userCorrect) {
                 $('main').html(lastCorrectForm(questionNum, data));
             } else {
