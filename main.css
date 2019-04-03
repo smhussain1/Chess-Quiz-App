@@ -26,10 +26,10 @@ body {
     color: aliceblue;
     font-size: 50px;
     text-shadow:
-            -1px -1px 0 #000,
-            1px -1px 0 #000,
-            -1px 1px 0 #000,
-            1px 1px 0 #000;
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 form {
@@ -170,8 +170,6 @@ button:hover {
 }
 
 
-
-
 @media only screen and (max-width: 450px) {
     .mainmessage header h1 {
         font-size: 25px;
@@ -186,7 +184,7 @@ button:hover {
     }
 
     button  {
-            display: block;
+        display: block;
             min-height: 25px;
             min-width: 25px;
             margin-bottom: 1.5em;
