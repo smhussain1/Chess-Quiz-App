@@ -32,9 +32,23 @@ let data = [
     {number: 7,
     question: 'Who is considered to be “the Father of Chess”?',
     answers: ['Mikhail Tal', 'Bobby Fischer', 'Wilhelm Steinitz', 'Mikhail Botvinnik'],
-    correctAns: 'Wilhelm Steinitz'}
-    ];
+    correctAns: 'Wilhelm Steinitz'},
 
+    {number: 8,
+    question: 'What piece(s) is(are) considered to be "The Soul of Chess"',
+    answers: ['The Queen', 'The King', 'The Knight(s)', 'The Pawn(s)'],
+    correctAns: 'The Pawn(s)'},
+
+    {number: 9,
+    question: 'Is the Fried Liver attack for black or white?',
+    answers: ['The Fried liver attack is an opening for black.', 'The Fried liver attack is an opening for white.', 'Both', 'Neither'],
+    correctAns: 'The Fried liver attack is an opening for white.'},
+
+    {number: 10,
+    question: 'When playing with a clock, which hand must be used to control time on the clock”?',
+    answers: ['It Does not Matter', 'The Opposite Hand you Just Touched the Last Piece With', 'The Same Hand you Just Touched the Last Piece With', 'Always the Opposite Hand you Play With'],
+    correctAns: 'Always the Opposite Hand you Play With'}
+    ];
 /*
     
     // test function
